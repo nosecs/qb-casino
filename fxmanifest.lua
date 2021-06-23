@@ -4,14 +4,8 @@ game 'gta5'
 description 'QB-Casino'
 version '1.0.0'
 
-client_scripts {
-	"client/main.lua",
-	"config.lua",
-}
+client_script 'client/main.lua'
 
-server_scripts {
-	"server/main.lua",
-	"config.lua",
-}
+server_script 'server/main.lua'
 
 dependency 'qb-blackjack'
