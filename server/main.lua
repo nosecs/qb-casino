@@ -11,7 +11,7 @@ AddEventHandler("qb-casino:sharlock:sell", function()
     local price = 0
     local Player = QBCore.Functions.GetPlayer(src)
     local xItem = Player.Functions.GetItemByName("casinochips")
-    if xItem ~= nil and xItem.amount > 0 then
+    if xItem.amount > 0 then
         for k, v in pairs(Player.PlayerData.items) do 
             if Player.PlayerData.items[k] ~= nil then 
                 if ItemList[Player.PlayerData.items[k].name] ~= nil then 
@@ -35,7 +35,7 @@ exports["qb-blackjack"]:SetGetChipsCallback(function(source)
     local Player = QBCore.Functions.GetPlayer(source)
     local Chips = Player.Functions.GetItemByName("casinochips")
 
-    if Chips ~= nil then 
+    if Chips > 0 then 
         Chips = Chips
     end
 
