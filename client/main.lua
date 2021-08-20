@@ -11,7 +11,7 @@ Citizen.CreateThread(function()
         local PlayerPed = PlayerPedId()
         local PlayerPos = GetEntityCoords(PlayerPed)
 
-            local dist = #(PlayerPos - vector3(-1876.14, 2060.96, 145.57))
+            local dist = #(PlayerPos - vector3(949.85, 35.39, 71.84))
             if dist < 10 then
                 InRange = true
                 DrawMarker(2, 949.85, 35.39, 71.84, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.2, 0.1, 255, 0, 0, 155, 0, 0, 0, 1, 0, 0, 0)
