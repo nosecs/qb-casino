@@ -1,3 +1,4 @@
+local QBCore = exports['qb-core']:GetCoreObject()
 local ItemList = {
     ["casinochips"] = 1,
 }
@@ -9,12 +10,12 @@ AddEventHandler("qb-casino:server:sell", function()
     local Player = QBCore.Functions.GetPlayer(src)
     local xItem = Player.Functions.GetItemByName("casinochips")
     if xItem ~= nil then
-        for k, v in pairs(Player.PlayerData.items) do 
-            if Player.PlayerData.items[k] ~= nil then 
-                if ItemList[Player.PlayerData.items[k].name] ~= nil then 
+        for k, v in pairs(Player.PlayerData.items) do
+            if Player.PlayerData.items[k] ~= nil then
+                if ItemList[Player.PlayerData.items[k].name] ~= nil then
                     price = price + (ItemList[Player.PlayerData.items[k].name] * Player.PlayerData.items[k].amount)
                     Player.Functions.RemoveItem(Player.PlayerData.items[k].name, Player.PlayerData.items[k].amount, k)
-                        
+
         Player.Functions.AddMoney("cash", price, "sold-casino-chips")
             TriggerClientEvent('QBCore:Notify', src, "You sold your chips for $"..price)
             TriggerEvent("qb-log:server:CreateLog", "casino", "Chips", "blue", "**"..GetPlayerName(src) .. "** got $"..price.." for selling the Chips")
@@ -31,7 +32,7 @@ exports["qb-blackjack"]:SetGetChipsCallback(function(source)
     local Player = QBCore.Functions.GetPlayer(source)
     local Chips = Player.Functions.GetItemByName("casinochips")
 
-    if Chips ~= nil then 
+    if Chips ~= nil then
         Chips = Chips
     end
 
