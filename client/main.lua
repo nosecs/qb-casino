@@ -13,7 +13,7 @@ local function DrawText3Ds(x, y, z, text)
     ClearDrawOrigin()
 end
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
         local InRange = false
         local PlayerPed = PlayerPedId()
@@ -33,8 +33,8 @@ Citizen.CreateThread(function()
             end
 
         if not InRange then
-            Citizen.Wait(5000)
+            Wait(5000)
         end
-        Citizen.Wait(5)
+        Wait(5)
     end
 end)
